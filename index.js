@@ -1,16 +1,19 @@
-const express = require('express');
-const cors = require('cors');
+
 const { products } = require('./db');
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+module.exports = (req, res) => {
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Content-Type, Authorization'
+  );
 
-app.use(cors());
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
 
-app.get('/api/products', (req, res) => {
   res.status(200).json({ products });
-});
-
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-});
+};
