@@ -1,7 +1,6 @@
 {
   "name": "api",
   "version": "1.0.0",
-<<<<<<< HEAD
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -11,14 +10,5 @@
     "cors": "^2.8.5",
     "faker": "^5.5.3",
     "json-graphql-server": "^2.2.3"
-=======
-  "main": "api/index.js", 
-  "license": "MIT",
-  "scripts": {
-    "start": "node api/index.js"
-  },
-  "dependencies": {
-    "express": "^5.1.0"
->>>>>>> bb259c74158dfcf5d026f10ad9e98bd9096d2178
   }
 }
