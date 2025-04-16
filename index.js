@@ -7,8 +7,4 @@ app.get('/products', (req, res) => {
   res.json(products);
 });
 
-app.listen(port, () => {
-  console.log(`API running on port ${port}`);
-});
-
 module.exports = app;
