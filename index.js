@@ -6,15 +6,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: '*',
+  origin: 'http://localhost:4200',
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true, 
 }));
 
 app.get('/api/products', (req, res) => {
   res.status(200).json({ products });
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-});
+module.exports = app;
