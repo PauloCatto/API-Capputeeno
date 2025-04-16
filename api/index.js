@@ -1,14 +1,5 @@
-const express = require('express');
-const app = express();
-const { products } = require('./db.js');
-const port = process.env.PORT || 3333;
+const { products } = require('./db');
 
-app.get('/products', (req, res) => {
-  res.json(products);
-});
-
-app.listen(port, () => {
-  console.log(`API running on port ${port}`);
-});
-
-module.exports = app;
+module.exports = (req, res) => {
+  res.status(200).json({ products });
+};
