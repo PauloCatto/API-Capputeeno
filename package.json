@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "json-graphql-server db.js --port $PORT"
+    "start": "json-graphql-server db.js --port $PORT --host 0.0.0.0"
   },
   "dependencies": {
     "cors": "^2.8.5",
